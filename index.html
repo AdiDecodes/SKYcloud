@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYCloud - Live Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loading"></div>
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white">SKYCLOUD</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" id="textbox" type="text" placeholder="Search City" aria-label="Search">
+                <button class="btn btn-outline-warning" type="submit" id="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container text-center my-5">
+        <h3>
+            <span id="city">
+                Search Your City
+            </span>
+        </h3>
+    </div>
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col mt-2">
+                <div class="card mb-4 rounded-3 shadow-sm h-100">
+                    <div class="card-header py-3">
+                        <h2 class="my-0 fw-normal">Environment</h2>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title mt-5">
+                            <span>
+                                <i class="fa-solid fa-sun" style="color: rgb(255, 157, 0)"></i>
+                            </span>
+                            <span class="text mx-2" id="sstime">0-0</span>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Sunrise Time - <span class="mx-2" id="sunrise">00</span></li>
+                            <li>Sunset Time - <span class="mx-2" id="sunset">00</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col mt-2">
+                <div class="card mb-4 rounded-3 shadow-sm h-100">
+                    <div class="card-header py-3 bg-dark">
+                        <h2 class="my-0 fw-normal text-white bg-dark">Weather</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="container d-flex align-items-center justify-content-center flex-direction-row">
+                            <h1 class="card-title pricing-card-title mt-5"><span>
+                                    <i class="fa-solid fa-smoke" id="weather_icon"></i>
+                                </span><span class="text mx-1" id="temp">00</span><small class="text">°C</small>
+                            </h1>
+                            <h4 id="condition_text" class="text-secondary mt-5 mx-3">
+                                Haze
+                            </h4>
+                        </div>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Humidity - <span id="humidity">00</span><span>%</span></li>
+                            <li>Visibility - <span id="visibility1">00</span></li>
+                            <li>Max Temp - <span id="max_temp">00</span><span>°C</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col mt-2">
+                <div class="card mb-4 rounded-3 shadow-sm h-100">
+                    <div class="card-header py-3">
+                        <h2 class="my-0 fw-normal">Air</h2>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title mt-5"><span>
+                                <i class="fa-solid fa-wind" style="color: rgb(65, 197, 240)"></i>
+                            </span><span class="text mx-1" id="wind_speed1">0.0</span><small
+                                class="text mx-2">Km/hr</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Wind Speed - <span class="mx-1" id="wind_speed">00</span><span>Km/hr</span></li>
+                            <li>Wind Direction - <span id="wind_direction">00</span><span>°</span></li>
+                            <li>Wind Chill - <span id="chill">00</span></li>
+                            <li>Pressure - <span id="pressure">00</span><span>ATM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 7-Day Forecast -->
+    <div class="container my-4 text-center">
+        <h3>
+            7-Day Weather Forecast
+        </h3>
+    </div>
+    <div class="container">
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 id="day1" class="text-secondary">
+                    Sun
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon1" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text1" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp1">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp1">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 id="day2" class="text-secondary">
+                    Mon
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon2" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text2" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp2">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp2">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 id="day3" class="text-secondary">
+                    Tue
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon3" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text3" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp3">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp3">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 id="day4" class="text-secondary">
+                    Wed
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon4" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text4" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp4">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp4">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 id="day5" class="text-secondary">
+                    Thu
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon5" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text5" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp5">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp5">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 id="day6" class="text-secondary">
+                    Fri
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon6" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text6" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp6">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp6">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="card mt-3 mb-4">
+            <div class="card-header">
+                <h5 id="day7" class="text-secondary">
+                    Sat
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <h3 class="text"><span>
+                            <i id="condition_icon7" class="fa-solid fa-smog" style="color: grey"></i>
+                        </span><span id="condition_text7" class="text mx-3">Haze</span></h3>
+                    <span class="text">
+                        <span id="min_temp7">
+                            Min Temp
+                        </span>
+                        <span>
+                            /
+                        </span>
+                        <span id="max_temp7">
+                            Max Temp
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+
+                <a class="btn btn-outline-light btn-floating m-1" target="!blank"
+                    href="https://www.instagram.com/_.adityyaa" role="button"><i class="fab fa-instagram"></i></a>
+
+                <a class="btn btn-outline-light btn-floating m-1" target="!blank"
+                    href="https://www.linkedin.com/in/singhaditya18/" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <a class="btn btn-outline-light btn-floating m-1" target="!blank" href="https://github.com/AdiDecodes"
+                    role="button"><i class="fab fa-github"></i></a>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Made with ♥ by Aditya
+        </div>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
