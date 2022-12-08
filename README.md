@@ -1,8 +1,6 @@
-
 # SKYCLOUD
 
 A website that shows weather details of a particular region along with upcoming weather forecasts.
-
 
 ## Features
 
@@ -11,15 +9,14 @@ A website that shows weather details of a particular region along with upcoming 
 - Region Details
 - 7-Day Forecast
 
-
 ## Screenshots
+
 ![App Screenshot](https://res.cloudinary.com/customzone-app/image/upload/v1670483023/Skycloud/img1_q9rjfk.jpg)
 ![App Screenshot](https://res.cloudinary.com/customzone-app/image/upload/v1670483078/Skycloud/img2_itwazh.jpg)
 
-
 ## 🛠 Skills
-Javascript, HTML, CSS, Bootstrap
 
+Javascript, HTML, CSS, Bootstrap
 
 ## FAQ
 
@@ -33,15 +30,14 @@ SKYCLOUD works with the help of third party API (pc - server - data). The data w
 
 #### How it fetches my region's weather?
 
-SKYCLOUD uses geolocation to get the current location & City name. It is not used in any other form. For more details, Visit [Privacy Policy](link)
+SKYCLOUD uses geolocation to get the current location & City name. It is not used in any other form. For more details, Visit [Privacy Policy](https://adidecodes.github.io/Skycloud/privacy-policy.html)
 
 ## 🚀 About Me
-I'm a Java developer currently working on web :)
 
+I'm a Java developer currently working on web :)
 
 ## Related
 
 Have a look on these too!
 
 [VIDZY - Fast Video Saver](https://adidecodes.github.io/Vidzy)
-
