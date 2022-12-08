@@ -11,6 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKYCloud - Live Weather</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -99,7 +116,7 @@
                             <li>Wind Speed - <span class="mx-1" id="wind_speed">00</span><span>Km/hr</span></li>
                             <li>Wind Direction - <span id="wind_direction">00</span><span>°</span></li>
                             <li>Wind Chill - <span id="chill">00</span></li>
-                            <li>Pressure - <span id="pressure">00</span><span>ATM</span></li>
+                            <li>Pressure - <span id="pressure">00 ATM</span></li>
                         </ul>
                     </div>
                 </div>
@@ -311,6 +328,10 @@
 
                 <a class="btn btn-outline-light btn-floating m-1" target="!blank" href="./privacy-policy.html"
                     role="button"><i class="fab fas fa-info-circle"></i></a>
+
+                <a class="btn btn-outline-light btn-floating m-1" target="!blank"
+                    href="https://www.buymeacoffee.com/adidecodes" role="button"><i
+                        class="fa-duotone fa-cup-togo"></i></a>
             </section>
         </div>
 
@@ -319,7 +340,7 @@
         </div>
     </footer>
 
-    <script src="api.js"></script>
+    <script type="module" src="api.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

@@ -17,7 +17,6 @@ const getweather = (cityname) => {
       load.style.display = "none";
       if (response.message != "Internal Server Error") {
         let Data = response;
-        console.log(Data);
         temp.innerHTML = tempconvert(
           Data.current_observation.condition.temperature
         );
@@ -27,7 +26,8 @@ const getweather = (cityname) => {
         );
         visibility1.innerHTML = Data.current_observation.atmosphere.visibility;
         humidity.innerHTML = Data.current_observation.atmosphere.humidity;
-        pressure.innerHTML = Data.current_observation.atmosphere.pressure;
+        pressure.innerHTML =
+          Data.current_observation.atmosphere.pressure + " ATM";
         wind_speed.innerHTML = Data.current_observation.wind.speed;
         wind_direction.innerHTML = Data.current_observation.wind.direction;
         chill.innerHTML = Data.current_observation.wind.chill;
@@ -36,6 +36,7 @@ const getweather = (cityname) => {
         sunset.innerHTML = Data.current_observation.astronomy.sunset;
         sunrise.innerHTML = Data.current_observation.astronomy.sunrise;
         sstime.innerHTML = Data.current_observation.astronomy.sunrise;
+        max_temp.innerHTML = tempconvert(Data.forecasts[0].high);
         day1.innerHTML = Data.forecasts[1].day;
         min_temp1.innerHTML = tempconvert(Data.forecasts[1].low) + "°C";
         max_temp1.innerHTML = tempconvert(Data.forecasts[1].high) + "°C";
@@ -91,7 +92,7 @@ submit.addEventListener("click", (e) => {
   }
 });
 
-const submitcity = (city) => {
+export const submitcity = (city) => {
   var load = document.getElementById("loading");
   load.style.display = "flex";
   getweather(city);
@@ -138,4 +139,4 @@ const set_condition_icon = (condition, name) => {
   }
 };
 
-export { submitcity };
+// export { submitcity };

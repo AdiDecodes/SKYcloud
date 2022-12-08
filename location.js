@@ -1,5 +1,4 @@
 import { submitcity } from "./api.js";
-let count = 0;
 
 function getCoordintes() {
   var options = {
@@ -13,7 +12,6 @@ function getCoordintes() {
     var lat = crd.latitude.toString();
     var lng = crd.longitude.toString();
     var coordinates = [lat, lng];
-    console.log(`Latitude: ${lat}, Longitude: ${lng}`);
     getCity(coordinates);
     return;
   }
@@ -47,7 +45,6 @@ function getCity(coordinates) {
     if (xhr.readyState == 4 && xhr.status == 200) {
       var response = JSON.parse(xhr.responseText);
       var city = response.address.city;
-      console.log(city);
       if (city != "") {
         submitcity(city);
         return;
