@@ -87,11 +87,15 @@ const getweather = (cityname) => {
 submit.addEventListener("click", (e) => {
   e.preventDefault();
   if (textbox.value.trim().length !== 0) {
-    var load = document.getElementById("loading");
-    load.style.display = "flex";
-    getweather(textbox.value);
+    submitcity(textbox.value);
   }
 });
+
+const submitcity = (city) => {
+  var load = document.getElementById("loading");
+  load.style.display = "flex";
+  getweather(city);
+};
 
 const tempconvert = (tempval) => {
   return Math.floor(((tempval - 32) * 5) / 9);
@@ -133,3 +137,5 @@ const set_condition_icon = (condition, name) => {
     document.getElementById(name).className = "fa-solid fa-cloud-showers";
   }
 };
+
+export { submitcity };
